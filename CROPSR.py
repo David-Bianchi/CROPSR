@@ -421,7 +421,7 @@ University of Illinois at Urbana-Champaign
                     shortseq = sequence[pam_location[0]:pam_location[1]]
                     longseq = sequence[pam_location[0]-5:pam_location[1]+5]
                     cutsite= apply_cutsite(pam_location[0],pam_location[1],'cas9','pos')
-                    crispr_guide = [pam_location[0],pam_location[1],chromosome[1::],cutsite,longseq[26:29],shortseq,longseq,'cas9','+']
+                    crispr_guide = [pam_location[0],pam_location[1],chromosome[1::],cutsite,longseq[25:28],shortseq,longseq,'cas9','+']
                     Complete_dataset.append(crispr_guide)
 
             # - strand
@@ -433,7 +433,7 @@ University of Illinois at Urbana-Champaign
                     shortseq = get_reverse_complement(sequence[pam_location[0]:pam_location[1]])
                     longseq = get_reverse_complement(sequence[pam_location[0]-5:pam_location[1]+5])
                     cutsite=apply_cutsite(pam_location[0],pam_location[1],'cas9','neg')
-                    crispr_guide = [pam_location[0],pam_location[1],chromosome[1::],cutsite,longseq[26:29],shortseq,longseq,'cas9','-']
+                    crispr_guide = [pam_location[0],pam_location[1],chromosome[1::],cutsite,longseq[25:28],shortseq,longseq,'cas9','-']
                     Complete_dataset.append(crispr_guide)
 
             if args.verbose:
