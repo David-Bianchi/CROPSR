@@ -458,7 +458,7 @@ University of Illinois at Urbana-Champaign
 
                     lesser_list = Complete_dataset[index_range:index_range+count]
 
-                    sequences = [np.frombuffer(bytes(str(item[6].replace('U','T')).upper(),"ascii"), 'uint8') if len(item[6]) == 30
+                    sequences = [np.frombuffer(bytes(str(get_gRNA_sequence(item[6]).replace('U','T')).upper(),"ascii"), 'uint8') if len(item[6]) == 30
                     else np.empty(30,) for item in lesser_list ]
 
                     score = rs1_score(np.array(sequences))
